@@ -7,6 +7,7 @@ const searchMovies = (req, res, next) => {
   // Remember, req.query contains all query parameters passed to us in the GET request
   // Filter req.query and only accept queries for `id`, `y`, `t`, and `d`
   // Check if each one exists, and if it does store it in our new queryObj
+  // This filtering could be extracted into it
   let queryObj = {};
   if (req.query.id) queryObj.imdbID  = req.query.id
   if (req.query.y) queryObj.Year     = req.query.y

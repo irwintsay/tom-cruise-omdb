@@ -1,9 +1,11 @@
+// '/api' router
 const router            = require('express').Router();
-// Destructure `searchMovies` out of the cruisedb model
+// Require and destructure `searchMovies` out of the cruisedb model
 const { searchMovies }  = require('../models/cruisedb');
 
-// Handle GET request for '/search', but remember in server.js we routed '/api' GET
-// requests here, so really we're handling GET requests for '/api/search'
+// Handle GET request for '/search',
+// but remember in 'server.js' we routed '/api' GET requests to this router,
+// so really we're handling GET requests for '/api/search'
 router.get('/search', searchMovies, (req, res) => {
   // When we get a request for '/api/search', we pass `req`, `res`, `next` through our
   // searchMovies middleware (cruisedb model), which may or may not find and filter 
