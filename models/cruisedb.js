@@ -1,4 +1,4 @@
-// Requiring `mongodb` package and destructure to `MongoClient`
+// Require and desctructure `mongodb` package
 const { MongoClient } = require('mongodb');
 // My Tom Cruise Movie database is called 'cruise_movie_db', change this to whatever you called your database
 const dbConnection = 'mongodb://localhost:27017/cruise_movie_db';
@@ -9,16 +9,13 @@ const searchMovies = (req, res, next) => {
   // Check if each one exists, and if it does store it in our new queryObj
   // This filtering could be extracted into it
   let queryObj = {};
-  if (req.query.id) queryObj.imdbID  = req.query.id
-  if (req.query.y) queryObj.Year     = req.query.y
-  if (req.query.t) queryObj.Title    = req.query.t
-  if (req.query.d) queryObj.Director = req.query.d
+  if (req.query.id) queryObj.imdbID  = req.query.id;
+  if (req.query.y) queryObj.Year     = req.query.y;
+  if (req.query.t) queryObj.Title    = req.query.t;
+  if (req.query.d) queryObj.Director = req.query.d;
 
+  // Connect to MongoDB
   MongoClient.connect(dbConnection, (err, db) => {
-    // If there's an error, throw error
-    if (err) {
-      next(err);
-    }
     db.collection('cruise_movies')
       // Find all documents in 'cruise_movies' collection matching our query object
       .find(queryObj)
