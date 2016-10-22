@@ -10,7 +10,7 @@ const router = require('./router/api');
 // This line tells my Express app to send '/api' requests to `router` which is defined above
 app.use('/api', router);
 
-// Status log
+// Logs
 app.use(logger('dev'));
 
 // Port number

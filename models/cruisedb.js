@@ -19,7 +19,7 @@ const searchMovies = (req, res, next) => {
       next(err);
     }
     db.collection('cruise_movies')
-      // This is the queryObj we made after filtering req.query
+      // Find all documents in 'cruise_movies' collection matching our query object
       .find(queryObj)
       .sort({ Year: -1, Title: 1 })
       .toArray((err, data) => {
@@ -30,4 +30,5 @@ const searchMovies = (req, res, next) => {
   });
 }
 
+// Export searchMovies object for use in our routers
 module.exports = { searchMovies };
