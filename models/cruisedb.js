@@ -1,7 +1,9 @@
+
+
 // Require and desctructure `mongodb` package
 const { MongoClient } = require('mongodb');
 // My Tom Cruise Movie database is called 'cruise_movie_db', change this to whatever you called your database
-const dbConnection = 'mongodb://localhost:27017/cruise_movie_db';
+const dbConnection = process.env.MONGODB_URI || 'mongodb://localhost:27017/cruise_movie_db';
 
 const searchMovies = (req, res, next) => {
   // Remember, req.query contains all query parameters passed to us in the GET request
