@@ -13,6 +13,10 @@ app.use('/api', router);
 // Logs
 app.use(logger('dev'));
 
+app.get('/', (req, res) => {
+  res.send('Hello');
+});
+
 // Port number
 const port = process.env.PORT || 3000;
 // Finally, tell my Express app to listen to `port`
