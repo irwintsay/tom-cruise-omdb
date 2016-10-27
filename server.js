@@ -1,4 +1,3 @@
-require('dotenv').config();
 // NPM Dependencies
 const express = require('express');
 const logger = require('morgan');
