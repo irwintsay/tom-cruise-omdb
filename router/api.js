@@ -10,7 +10,7 @@ router.get('/search', searchMovies, (req, res) => {
   // When we get a request for '/api/search', we pass `req`, `res`, `next` through our
   // searchMovies middleware (cruisedb model), which may or may not find and filter 
   // data before sending our response (json)
-  // Consider how this would look if we wanted to render a view instead
+  // Consider how the line below would look if we wanted to render a view instead
   res.json(res.data);
 });
 
