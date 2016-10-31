@@ -14,7 +14,7 @@ app.use('/api', router);
 app.use(logger('dev'));
 
 app.get('/', (req, res) => {
-  res.send('Hello');
+  res.send('Successfully deployed!!!');
 });
 
 // Port number

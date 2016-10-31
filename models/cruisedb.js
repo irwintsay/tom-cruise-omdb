@@ -1,5 +1,3 @@
-
-
 // Require and desctructure `mongodb` package
 const { MongoClient } = require('mongodb');
 // My Tom Cruise Movie database is called 'cruise_movie_db', change this to whatever you called your database
